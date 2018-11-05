@@ -1,0 +1,7 @@
+<p>test</p>
+<%= link_to "Change your password", edit_user_registration_path %>
+
+<%= simple_form_for(@user) do |f| %>
+  <%= f.input :email %>
+  <%= f.button :submit %>
+<% end %>
