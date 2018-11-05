@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'profile/:id', to: 'users#show', as: :profile
   # get 'settings/:id', to: 'users#edit', as: :settings
+  resources :tours
 end
