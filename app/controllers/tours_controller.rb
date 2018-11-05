@@ -8,18 +8,18 @@ class ToursController < ApplicationController
     @tour = Tour.find(params[:id])
   end
 
-  def new
-    @tour = Tour.new
-  end
+  # def new
+  #   @tour = Tour.new
+  # end
 
-  def create
-    @tour = Tour.new(tour_params)
-  end
+  # def create
+  #   @tour = Tour.new(tour_params)
+  # end
 
-  private
+  # private
 
-  def tour_params
-    params.require(:tour).permit(:title, :capacity, :category, :longitude, :latitude, :start_time, :end_time, :date, :location, :price_euro, :user_id)
-  end
+  # def tour_params
+  #   params.require(:tour).permit(:title, :capacity, :category, :longitude, :latitude, :start_time, :end_time, :date, :location, :price_euro, :user_id)
+  # end
 end
 
