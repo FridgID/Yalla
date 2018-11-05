@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
+  # resources :user, only:
   root to: 'pages#home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'profile/:id', to: 'users#show', as: :profile
+  # get 'settings/:id', to: 'users#edit', as: :settings
 end
