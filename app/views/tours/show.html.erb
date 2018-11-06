@@ -1,1 +1,15 @@
-<h2>Heres your tour</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-2">
+      <h2><%= @tour.title.upcase %></h2>
+        <p>Category :: <%= @tour.category.capitalize %><p>
+        <p>Capacity :: <%= @tour.capacity %></p>
+        <p>Location :: <%= @tour.location.capitalize %></p>
+        <p>Price :: €<%= @tour.price_euro %> </p>
+
+        <%= link_to "Book", new_tour_path, class: "btn btn-success btn-lg"   %>
+    </div>
+ </div>
+</div>
+
+
