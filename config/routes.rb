@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  # resources :user, only:
+  # devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', edit: 'settings'}
+  devise_scope :user do
+    get 'settings', to: 'devise/registrations#edit'
+  end
   root to: 'pages#home'
-  get 'profile/:id', to: 'users#show', as: :profile
-  # get 'settings/:id', to: 'users#edit', as: :settings
+  get 'profile', to: 'users#show', as: :profile
   resources :tours
 end
