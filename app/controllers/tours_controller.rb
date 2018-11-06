@@ -12,8 +12,17 @@ class ToursController < ApplicationController
     @tour = Tour.new
   end
 
+  def confirm
+    @tour = Tour.find(params[:id])
+  end
+
   def create
     @tour = Tour.new(tour_params)
+    if @tour.save
+      redirect_to tour_path(@tour)
+    else
+      render 'new'
+    end
   end
 
   private

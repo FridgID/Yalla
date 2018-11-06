@@ -2,9 +2,9 @@ puts "seeding..."
 
 #TODO: date/time stuff
 #TODO: users
-User.destroy_all
-Tour.destroy_all
 
+Tour.destroy_all
+User.destroy_all
 
 user = User.create!(email: 'test@test.com', password: 'password', password_confirmation: 'password')
 
@@ -13,6 +13,7 @@ user = User.create!(email: 'test@test.com', password: 'password', password_confi
 Tour.create!([
   {
     title: "fancy food in ams",
+    description: "Really good food trail around Amsterdam",
     capacity: 6,
     category: "food",
     longitude: 52.376189,
@@ -23,6 +24,7 @@ Tour.create!([
   },
   {
     title: "buy beer",
+    description: "Really good beer trail around Amsterdam",
     capacity: 200,
     category: "beer",
     longitude: 52.376199,
@@ -33,6 +35,7 @@ Tour.create!([
   },
   {
     title: "bike & beer",
+    description: "Really good bike & beer trail around Amsterdam",
     capacity: 10,
     category: "bike",
     longitude: 52.376198,
