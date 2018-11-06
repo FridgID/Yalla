@@ -1,7 +1,9 @@
 <%= render 'banner' %>
 
-<div class="category-card-container">
-  <div class="category-card">beer</div>
-  <div class="category-card">food</div>
-  <div class="category-card">walk</div>
+<div class="category-container">
+  <% Tour::CATEGORYS.each do |cat| %>
+    <%= link_to tours_path(:category => cat), class: "cat-link" do %>
+      <div class="category"><%= cat %></div>
+    <% end %>
+  <% end %>
 </div>
