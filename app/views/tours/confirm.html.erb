@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-2">
+
+        <h2>Book a new tour</h2>
+
+        <%= simple_form_for (@tour) do |f|%>
+        <div class="form-group">
+          <%= f.label :title %>
+          <%= f.text_field :title, class: 'form-control' %>
+        </div>
+
+        <div>
+          <%= link_to "Confirmation", root_path, class: "btn btn-success btn-lg"   %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

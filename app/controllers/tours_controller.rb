@@ -8,9 +8,13 @@ class ToursController < ApplicationController
     @tour = Tour.find(params[:id])
   end
 
-  # def new
-  #   @tour = Tour.new
-  # end
+  def new
+    @tour = Tour.new
+  end
+
+  def confirm
+    @tour = Tour.find(params[:id])
+  end
 
   # def create
   #   @tour = Tour.new(tour_params)
