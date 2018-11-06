@@ -25,6 +25,10 @@ class ToursController < ApplicationController
     end
   end
 
+  def edit
+
+  end
+
   private
 
   def tour_params
