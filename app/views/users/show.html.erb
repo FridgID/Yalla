@@ -2,6 +2,8 @@
 <!-- if no avatar render photo uploader, else display user avatar -->
 
 <% if !current_user.photo.present? %>
+  <% flash[:alert] = "Please upload a profile photo so your Yalla-friends will recognize you :)"
+ %>
 <%= render partial: 'photo_uploader' %>
 <% end %>
 
@@ -9,12 +11,18 @@
 <p>Username: <%= @user.email %></p> -->
 
 <h3>Yalla! Here are your upcoming tours:</h3>
+<ul class="list-unstyled">
+  <% current_user.tours.each do |t| %>
+  <li><%= t.title %>– <%= t.location %> <i class="<%= Tour::CATEGORYS[t.category.to_sym] %> fa-1x"></i>
+  <% end %>
+  </li>
+</ul>
 <!-- (as list or cards, if cards render from shared)
  -->
 
- <h3>Psst! Did you enjoy (put in pe) @user.tours.last.title? We would be thrilled if you give a review!</h3>
+ <h3>Psst! Did you enjoy Ghost Walk in Jordaan? We would be thrilled if you give a review!</h3>
 
 <!-- list of previous tours (as list or cards, if cards render from shared)
 -->
 
-<%= link_to "Account settings", edit_user_registration_path, class: "btn btn-primary" %>
+
