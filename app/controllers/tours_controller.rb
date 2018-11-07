@@ -2,7 +2,7 @@ class ToursController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @tours = policy_scope(Tour)
+    @tours = policy_scope(Tour).where(category: params[:category])
   end
 
   def show
