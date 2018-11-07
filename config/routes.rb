@@ -5,8 +5,8 @@ Rails.application.routes.draw do
     get 'settings', to: 'devise/registrations#edit'
   end
   root to: 'pages#home'
-  get 'tours/:id/confirm', to: 'tours#confirm', as: :confirm
   get 'profile', to: 'users#show', as: :profile
-
+  put 'profile', to: 'users#update', as: :upload
+  get 'tours/:id/confirm', to: 'tours#confirm', as: :confirm
   resources :tours
 end
