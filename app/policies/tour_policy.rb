@@ -11,7 +11,12 @@ class TourPolicy < ApplicationPolicy
   def new?
     return true
   end
+
   def create?
+    return true
+  end
+
+  def confirm?
     return true
   end
 

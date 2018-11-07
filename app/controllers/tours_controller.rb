@@ -16,6 +16,7 @@ class ToursController < ApplicationController
 
   def confirm
     @tour = Tour.find(params[:id])
+    authorize @tour
   end
 
   def create
