@@ -24,6 +24,50 @@ Tour.create!([
     user_id: user.id
   },
   {
+    title: "Eat sleep food repeate",
+    description: "48 1 on 1 food marathon.",
+    capacity: 2,
+    category: "food",
+    longitude: 4.893036,
+    latitude: 52.376129,
+    location: "amsterdam",
+    price_euro: 10,
+    user_id: user.id
+  },
+  {
+    title: "free food for money",
+    description: "Its actually free if you forget about the money you pay.",
+    capacity: 4,
+    category: "food",
+    longitude: 4.893039,
+    latitude: 52.376289,
+    location: "amsterdam",
+    price_euro: 500,
+    user_id: user.id
+  },
+  {
+    title: "free beer (tap water)",
+    description: "Water? Beer? Difference?     FREE!!!!!!!!!!!",
+    capacity: 90,
+    category: "beer",
+    longitude: 4.893036,
+    latitude: 52.376182,
+    location: "amsterdam",
+    price_euro: 0,
+    user_id: user.id
+  },
+  {
+    title: "friday drinks",
+    description: "Every day free drinks for only 0 euro. (You have to bring them yourself)",
+    capacity: 9999,
+    category: "beer",
+    longitude: 4.893036,
+    latitude: 52.376189,
+    location: "amsterdam",
+    price_euro: 0,
+    user_id: user.id
+  },
+  {
     title: "buy beer",
     description: "Really good beer trail around Amsterdam",
     capacity: 200,
@@ -74,6 +118,39 @@ Tour.create!([
     category: "walk",
     longitude: 52.376182,
     latitude: 4.893267,
+    location: "amsterdam",
+    price_euro: 1,
+    user_id: user.id
+  },
+  {
+    title: "Hidden places in amsterdam",
+    description: "Feel the power of an underground tour guide that shows some magic.",
+    capacity: 8,
+    category: "walk",
+    longitude: 52.376281,
+    latitude: 4.893267,
+    location: "amsterdam",
+    price_euro: 77,
+    user_id: user.id
+  },
+  {
+    title: "You are a pirate!",
+    description: "Do what you want cause you are free!! Arr!",
+    capacity: 8,
+    category: "boat",
+    longitude: 52.376281,
+    latitude: 4.893268,
+    location: "amsterdam",
+    price_euro: 0,
+    user_id: user.id
+  },
+  {
+    title: "Bee biking!",
+    description: "We dress as bees and cycle some bikes :D",
+    capacity: 22,
+    category: "bike",
+    longitude: 52.376261,
+    latitude: 4.893268,
     location: "amsterdam",
     price_euro: 1,
     user_id: user.id

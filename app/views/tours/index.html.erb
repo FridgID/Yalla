@@ -1,26 +1,20 @@
 <div class="wrapper">
 <div class="container text-center">
 <div class="row">
-  <h2>Yalla! Hurry up & join a tour</h2>
+  <h2 class="index-header">YALLA! HURRY UP & JOIN A TOUR</h2>
 
-  <% @tours.each do |tour| %>
+      <% @tours.each do |tour| %>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <%= link_to tour_path(tour), class: "custom-card-link" do %>
+            <div class="card">
+              <h3><%= tour.title.upcase %></h3>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
 
-
-    <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/amsterdam')">
-
-        <%= link_to tour.title.upcase, tour_path(tour), class: "card-description"%>
-        <% if policy(tour).edit?  %>
-        <%= link_to 'Edit', edit_tour_path(tour) %> :::
-        <% end %>
-
-        <% if policy(tour).destroy? %>
-        <%= link_to "Delete", tour_path(tour), method: :delete, data: { confirm: "Are you sure?"}%>
-        <% end %>
-      </div>
+    <!-- bootstrap end -->
     </div>
-    <% end %>
   </div>
 </div>
-</div>
-</div>
+
