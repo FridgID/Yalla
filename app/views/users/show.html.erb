@@ -1,6 +1,4 @@
 <%= render partial: 'profile_banner', locals: { email: @user.email } %>
-
-<h1>Profile/Dashboard</h1>
 <!-- if no avatar render photo uploader, else display user avatar -->
 
 <%= simple_form_for current_user, method: :put, url: profile_path(current_user) do |f| %>
@@ -24,6 +22,5 @@
 
 <!-- list of previous tours (as list or cards, if cards render from shared)
 -->
-
 
 <%= link_to "Account settings", edit_user_registration_path, class: "btn btn-primary" %>
