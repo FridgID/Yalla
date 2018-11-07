@@ -1,7 +1,18 @@
 .profile-banner {
-  height: 250px;
+  margin: -25px;
+  height: 200px;
   background-color: $teal;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  color: white;
+  position: relative;
+}
+
+.circle-right{
+  position: absolute;
+  top: 25px;
+  left: 50px;
+}
+
+.profile-text-banner{
+  text-align: center;
+  padding-top: 20px;
 }
