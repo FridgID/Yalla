@@ -3,6 +3,28 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
+  def update
+    @user = current_user
+    # @photo = @user.photo
+    if @user.update(photo: @user.photo)
+      redirect_to profile_path
+    else
+      raise
+    end
+    raise
+  end
+
+  # def update
+  #     @user = current_user
+  #     @task = @user.task.find(params[:id])
+  #     if @task.update_attributes(task_params)
+  #       flash[:success] = "Task updated!"
+  #       redirect_to user_tasks_path(current_user)
+  #     else
+  #       render action: :edit
+  #     end
+  #   end
+
 
   # def update
   #   @user = User.find(params[:id])
