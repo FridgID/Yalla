@@ -11,7 +11,7 @@
           <%= f.label :description %>
           <%= f.text_field :description, class: 'form-control' %>
           <%= f.label :capacity %>
-          <%= f.text_field :capacity, class: 'form-control' %>
+          <%= f.number_field :capacity, class: 'form-control' %>
           <%= f.input :category, collection: Tour::CATEGORYS %>
           <%= f.label :location %>
           <%= f.text_field :location, class: 'form-control' %>

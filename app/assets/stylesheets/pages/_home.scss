@@ -1,6 +1,7 @@
 // Specific CSS for your home-page
 
 $ams-img: 'https://kitt.lewagon.com/placeholder/cities/amsterdam';
+
 .yalla-banner {
   height: 400px;
   background-position: center;
@@ -11,20 +12,33 @@ $ams-img: 'https://kitt.lewagon.com/placeholder/cities/amsterdam';
   color: white;
 }
 
-.category-card-container {
+.category-container {
   margin: 10px 100px;
-  // border: 5px solid black;
   display: flex;
   justify-content: space-between;
 }
 
-.category-card {
+.category {
   height: 100px;
   width: 200px;
-  background-color: #BAE5E0;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #afd8d3;
+  border-radius: 5px;
+  border: 2px solid $teal-border;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  background-color: $teal;
+  &:hover {
+    background-color: $teal-hover;
+  }
+}
+
+.cat-link {
+  margin: 10px;
+  color: white;
+  text-decoration: none;
+  &:hover, &:active, &:visited, &:link {
+    text-decoration: none;
+    color: white;
+  }
 }
