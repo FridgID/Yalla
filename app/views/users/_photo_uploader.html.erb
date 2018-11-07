@@ -1,7 +1,8 @@
-<div class="photo-uploader">
+<div class="photo-uploader form-group">
   <%= simple_form_for current_user, method: :put, url: profile_path(current_user) do |f| %>
-  <%= f.input :photo, label: "Please make sure to upload a photo to complete your profile" %>
-  <%= f.input :photo_cache, as: :hidden %>
-  <%= f.submit "Upload" %>
+  <%= f.input :photo, label: "Upload a photo to complete your profile:", class: "form-control" %>
+  <%= f.input :photo_cache, as: :hidden, class: "form-control" %>
+  <%= f.submit "Upload", class: "btn btn-success" %>
+
   <% end %>
 </div>

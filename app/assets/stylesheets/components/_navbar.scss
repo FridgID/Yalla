@@ -22,6 +22,14 @@
   border-radius: 50%;
 }
 
+.fa-user {
+  color: $teal;
+}
+
+.fa-user:hover {
+  color: #333333;
+}
+
 /* Right section */
 .navbar-wagon-right {
   display: flex;
