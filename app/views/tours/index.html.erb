@@ -1,17 +1,26 @@
-<h2>Here is a list of all tours</h2>
+<div class="wrapper">
+<div class="container text-center">
+<div class="row">
+  <h2>Yalla! Hurry up & join a tour</h2>
 
-<ul>
   <% @tours.each do |tour| %>
-    <li>
-      Title:: <%= link_to tour.title, tour_path(tour)%> <<< User::<%= link_to tour.user.email, tour_path(tour)%> >>>
 
-      <% if policy(tour).edit?  %>
+
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/amsterdam')">
+
+        <%= link_to tour.title.upcase, tour_path(tour), class: "card-description"%>
+        <% if policy(tour).edit?  %>
         <%= link_to 'Edit', edit_tour_path(tour) %> :::
         <% end %>
 
-      <% if policy(tour).destroy? %>
-        <%= link_to "Delete", tour_path(tour), method: :delete, data: { confirm: "Are you sure?"}, class: "show-paragraph"%>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
+        <% if policy(tour).destroy? %>
+        <%= link_to "Delete", tour_path(tour), method: :delete, data: { confirm: "Are you sure?"}%>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+</div>
+</div>
