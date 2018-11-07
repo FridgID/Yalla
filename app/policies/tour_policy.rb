@@ -5,19 +5,24 @@ class TourPolicy < ApplicationPolicy
     end
   end
 
-  def show?
-    return true
+  def index?
+    true
   end
+
+  def show?
+    true
+  end
+
   def new?
-    return true
+    true
   end
 
   def create?
-    return true
+    true
   end
 
   def confirm?
-    return true
+    true
   end
 
   def edit?
