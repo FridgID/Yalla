@@ -17,8 +17,8 @@ Tour.create!([
     description: "Really good food trail around Amsterdam",
     capacity: 6,
     category: "food",
-    longitude: 52.376189,
-    latitude: 4.893036,
+    longitude: 4.893036,
+    latitude: 52.376189,
     location: "amsterdam",
     price_euro: 5,
     user_id: user.id
@@ -28,8 +28,8 @@ Tour.create!([
     description: "Really good beer trail around Amsterdam",
     capacity: 200,
     category: "beer",
-    longitude: 52.376199,
-    latitude: 4.893236,
+    longitude: 4.893236,
+    latitude: 52.376199,
     location: "amsterdam",
     price_euro: 100,
     user_id: user.id
@@ -39,10 +39,21 @@ Tour.create!([
     description: "Really good bike & beer trail around Amsterdam",
     capacity: 10,
     category: "bike",
-    longitude: 52.376198,
-    latitude: 4.893237,
+    longitude: 4.893237,
+    latitude: 52.376198,
     location: "amsterdam",
     price_euro: 20,
+    user_id: user.id
+  },
+  {
+    title: "Paris foo bar",
+    description: "Some developers eating beers",
+    capacity: 2048,
+    category: "food",
+    longitude: 2.2945,
+    latitude: 48.8582,
+    location: "paris",
+    price_euro: 80,
     user_id: user.id
   },
   {
@@ -72,8 +83,8 @@ Tour.create!([
     description: "Snakes and dirt",
     capacity: 8,
     category: "walk",
-    longitude: 52.376182,
-    latitude: 4.893167,
+    longitude: 4.893167,
+    latitude: 52.376182,
     location: "amsterdam",
     price_euro: 22,
     user_id: user2.id

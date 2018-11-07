@@ -16,5 +16,9 @@
     <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+    <!-- gmap stuff yes i know i have a key in the code -->
+    <!-- it is a public key so everybody sees it anyways -->
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyC_jC8NQUbr6rfikUiy5lC9L0mtRe5irHo" %>
+    <%= javascript_pack_tag "map" %>
   </body>
 </html>
