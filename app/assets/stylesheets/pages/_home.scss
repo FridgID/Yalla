@@ -15,11 +15,18 @@ $ams-img: 'https://kitt.lewagon.com/placeholder/cities/amsterdam';
   color: white;
 }
 
-.yalla-banner h1 {
-  color: $orange;
-  text-align: center;
+.yalla-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
 
+.yalla-banner h1 {
+  color: #db633d;
+  text-align: center;
+  font-size: 4em;
+}
 
 .category-container {
   margin: 25px 10px;
