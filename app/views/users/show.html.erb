@@ -1,4 +1,26 @@
-<h1>Dashboard</h1>
-<%= @user.email %>
+<%= render partial: 'profile_banner', locals: { email: @user.email } %>
+<!-- if no avatar render photo uploader, else display user avatar -->
 
-<%= link_to "change details", edit_user_registration_path %>
+<%= simple_form_for current_user, method: :put, url: profile_path(current_user) do |f| %>
+  <!-- [...] -->
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
+  <%= f.submit "upload foto" %>
+  <!-- [...] -->
+<% end %>
+
+  <%= cl_image_tag @user.photo, alt: "avatar" %>
+
+<h3>Welcome <%= @user.name %>!</h3>
+<p>Username: <%= @user.email %></p>
+
+<h3>Yalla! Here are your upcoming tours:</h3>
+<!-- (as list or cards, if cards render from shared)
+ -->
+
+ <h3>Psst! Did you enjoy (put in pe) @user.tours.last.title? We would be thrilled if you give a review!</h3>
+
+<!-- list of previous tours (as list or cards, if cards render from shared)
+-->
+
+<%= link_to "Account settings", edit_user_registration_path, class: "btn btn-primary" %>
