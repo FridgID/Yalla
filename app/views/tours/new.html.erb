@@ -12,7 +12,7 @@
           <%= f.text_field :description, class: 'form-control' %>
           <%= f.label :capacity %>
           <%= f.number_field :capacity, class: 'form-control' %>
-          <%= f.input :category, collection: Tour::CATEGORYS %>
+          <%= f.input :category, collection: Tour::CATEGORYS.keys.map(&:to_s) %>
           <%= f.label :location %>
           <%= f.text_field :location, class: 'form-control' %>
           <%= f.label :price_euro %>
