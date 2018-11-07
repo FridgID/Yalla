@@ -1,10 +1,17 @@
 <h2>Here is a list of all tours</h2>
 
 <ul>
-<% @tours.each do |tour| %>
+  <% @tours.each do |tour| %>
+    <li>
+      Title:: <%= link_to tour.title, tour_path(tour)%> <<< User::<%= link_to tour.user.email, tour_path(tour)%> >>>
 
-  <li><%= link_to tour.title, tour_path(tour)%></li>
+      <% if policy(tour).edit?  %>
+        <%= link_to 'Edit', edit_tour_path(tour) %> :::
+        <% end %>
 
-
-<% end %>
+      <% if policy(tour).destroy? %>
+        <%= link_to "Delete", tour_path(tour), method: :delete, data: { confirm: "Are you sure?"}, class: "show-paragraph"%>
+      <% end %>
+    </li>
+  <% end %>
 </ul>
