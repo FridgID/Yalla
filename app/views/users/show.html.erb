@@ -1,18 +1,12 @@
-<%= render partial: 'profile_banner', locals: { email: @user.email } %>
+<%= render partial: 'profile_banner', locals: { name: @user.name } %>
 <!-- if no avatar render photo uploader, else display user avatar -->
 
-<%= simple_form_for current_user, method: :put, url: profile_path(current_user) do |f| %>
-  <!-- [...] -->
-  <%= f.input :photo %>
-  <%= f.input :photo_cache, as: :hidden %>
-  <%= f.submit "upload foto" %>
-  <!-- [...] -->
+<% if !current_user.photo.present? %>
+<%= render partial: 'photo_uploader' %>
 <% end %>
 
-  <%= cl_image_tag @user.photo, alt: "avatar" %>
-
-<h3>Welcome <%= @user.name %>!</h3>
-<p>Username: <%= @user.email %></p>
+<!-- <h3>Welcome <%= @user.name %>!</h3>
+<p>Username: <%= @user.email %></p> -->
 
 <h3>Yalla! Here are your upcoming tours:</h3>
 <!-- (as list or cards, if cards render from shared)

@@ -6,24 +6,34 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     # @photo = @user.photo
-    if @user.update(photo: @user.photo)
+    if @user.update(user_params)
+      flash[:notice] = "Successfully uploaded"
       redirect_to profile_path
     else
       raise
     end
-    raise
   end
 
-  # def update
-  #     @user = current_user
-  #     @task = @user.task.find(params[:id])
-  #     if @task.update_attributes(task_params)
-  #       flash[:success] = "Task updated!"
-  #       redirect_to user_tasks_path(current_user)
+
+
+  # def create
+  #   @user = User.new(user_params)
+  #   respond_to do |format|
+  #     if @user.save
+  #       format.html {
+  #         if params[:user][:avatar].present?
+  #           render :crop  ## Render the view for cropping
+  #         else
+  #           redirect_to @user, notice: 'User was successfully created.'
+  #         end
+  #       }
+  #       format.json { render action: 'show', status: :created, location: @user }
   #     else
-  #       render action: :edit
+  #       format.html { render action: 'new' }
+  #       format.json { render json: @user.errors, status: :unprocessable_entity }
   #     end
   #   end
+  # end
 
 
   # def update
@@ -46,7 +56,7 @@ class UsersController < ApplicationController
 
   # private
 
-  # def user_params
-  #   params.require(:user).permit(:name, :email, :password)
-  # end
+  def user_params
+    params.require(:user).permit(:photo)
+  end
 end

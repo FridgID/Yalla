@@ -1,0 +1,7 @@
+<div class="photo-uploader">
+  <%= simple_form_for current_user, method: :put, url: profile_path(current_user) do |f| %>
+  <%= f.input :photo, label: "Please make sure to upload a photo to complete your profile" %>
+  <%= f.input :photo_cache, as: :hidden %>
+  <%= f.submit "Upload" %>
+  <% end %>
+</div>
