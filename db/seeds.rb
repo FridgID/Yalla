@@ -1,16 +1,16 @@
 puts "seeding..."
 
 #TODO: date/time stuff
-#TODO: users
 
+puts "destroy tours and users..."
 Tour.destroy_all
 User.destroy_all
 
+puts "create users..."
 user = User.create!(email: 'test@test.com', password: 'password', password_confirmation: 'password')
 user2 = User.create!(email: 't@t.nl', password: 'password', password_confirmation: 'password')
 
-
-
+puts "create tours..."
 Tour.create!([
   {
     title: "fancy food in ams",
@@ -55,6 +55,39 @@ Tour.create!([
     location: "paris",
     price_euro: 80,
     user_id: user.id
+  },
+  {
+    title: "chill boat tour",
+    description: "Some nice shippy bippy in ze river",
+    capacity: 10,
+    category: "boat",
+    longitude: 52.376198,
+    latitude: 4.893237,
+    location: "amsterdam",
+    price_euro: 20,
+    user_id: user.id
+  },
+  {
+    title: "Walk and talk",
+    description: "Sniff some fresh air in the forests",
+    capacity: 15,
+    category: "walk",
+    longitude: 52.376182,
+    latitude: 4.893267,
+    location: "amsterdam",
+    price_euro: 1,
+    user_id: user.id
+  },
+  {
+    title: "Jungle adventure in ams",
+    description: "Snakes and dirt",
+    capacity: 8,
+    category: "walk",
+    longitude: 4.893167,
+    latitude: 52.376182,
+    location: "amsterdam",
+    price_euro: 22,
+    user_id: user2.id
   }
 ])
 
