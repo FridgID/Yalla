@@ -1,9 +1,16 @@
 <%= render 'banner' %>
 
-<div class="category-container">
-  <% Tour::CATEGORYS.each do |cat, icon| %>
-    <%= link_to tours_path(:category => cat), class: "cat-link" do %>
-      <div class="category"><%= cat %></div>
+<div class="wrapper">
+<div class="container">
+
+  <div class="category-container">
+
+    <% Tour::CATEGORYS.each do |cat, icon| %>
+      <%= link_to tours_path(:category => cat), class: "cat-link" do %>
+        <div class="category"><i class="<%= icon %> icon-border"></i><%= cat.upcase %></div>
+      <% end %>
+
     <% end %>
-  <% end %>
+  </div>
+</div>
 </div>

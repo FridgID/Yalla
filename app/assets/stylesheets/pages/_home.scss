@@ -2,6 +2,9 @@
 
 $ams-img: 'https://kitt.lewagon.com/placeholder/cities/amsterdam';
 
+.wrapper{
+  color: white;
+}
 .yalla-banner {
   height: 400px;
   background-position: center;
@@ -12,25 +15,29 @@ $ams-img: 'https://kitt.lewagon.com/placeholder/cities/amsterdam';
   color: white;
 }
 
+.yalla-banner h1 {
+  color: $orange;
+  text-align: center;
+}
+
 
 .category-container {
-  margin: 10px 100px;
+  margin: 25px 10px;
   display: flex;
   justify-content: space-between;
 }
 
 .category {
+  color: $teal;
   height: 100px;
   width: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
-  border: 2px solid $teal-border;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-  background-color: $teal;
+  background-color: white;
+  font-size: 24px;
   &:hover {
-    background-color: $teal-hover;
+    color: $orange;
   }
 }
 
@@ -42,4 +49,10 @@ $ams-img: 'https://kitt.lewagon.com/placeholder/cities/amsterdam';
     text-decoration: none;
     color: white;
   }
+}
+
+.icon-border{
+  padding-right: 25px;
+  font-size: 50px;
+
 }

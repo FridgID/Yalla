@@ -4,10 +4,10 @@ class Tour < ApplicationRecord
   # CATEGORYS=["walk", "food", "beer", "boat", "bike"] # old
   CATEGORYS = {
     walk: "fas fa-walking",
-    food: "fas fa-beer",
-    beer: "fas fa-bicycle",
+    food: "fas fa-utensils",
+    beer: "fas fa-beer",
     boat: "fas fa-ship",
-    bike: "fas fa-utensils"
+    bike: "fas fa-bicycle"
   }
   validates :category, inclusion: { in: CATEGORYS.keys.map(&:to_s) }
 end
