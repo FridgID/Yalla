@@ -6,8 +6,5 @@ class PagesController < ApplicationController
   end
 
   def home
-    if params[:confirm]
-      flash[:notice] = "Confirmation mail sent"
-    end
   end
 end

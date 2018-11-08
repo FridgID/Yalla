@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'profile', to: 'users#show', as: :profile
   put 'profile', to: 'users#update', as: :upload
+
+  # TODO: nest ressources and use the booking controller instead
   get 'tours/:id/confirm', to: 'tours#confirm', as: :confirm
+  post 'tours/:id/confirm', to: 'tours#book', as: :book
+  delete 'tours/:id/confirm', to: 'tours#cancel_book', as: :cancel_book
   resources :tours
 end

@@ -1,4 +1,6 @@
 
+puts "destroy bookings..."
+Booking.destroy_all
 puts "destroy reviews.."
 Review.destroy_all
 puts "destroy tours..."
