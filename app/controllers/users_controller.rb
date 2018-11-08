@@ -16,8 +16,6 @@ class UsersController < ApplicationController
     end
   end
 
-
-
   # def create
   #   @user = User.new(user_params)
   #   respond_to do |format|
@@ -37,7 +35,6 @@ class UsersController < ApplicationController
   #   end
   # end
 
-
   # def update
   #   @user = User.find(params[:id])
   #   @user.update(params[:email, :name])
@@ -56,7 +53,7 @@ class UsersController < ApplicationController
   #   end
   # end
 
-  # private
+  private
 
   def user_params
     params.require(:user).permit(:photo)
