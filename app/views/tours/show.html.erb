@@ -1,7 +1,19 @@
 <div class="container show-container">
   <div class="row">
     <div class="col-md-6 col-md-offset-2">
-      <%= cl_image_tag @tour.photo, alt: "tour-photo", width: 555, crop: :fill  %>
+      <% if @tour.photo.present? %>
+        <div class="uploaded-show">
+          <%= cl_image_tag @tour.photo, alt: "tour-photo", width: 555, crop: :fill  %>
+          <div class="overlay-show">
+          </div>
+        </div>
+      <% else %>
+        <div class="default-photo">
+          <%= image_tag "https://kitt.lewagon.com/placeholder/cities/amsterdam", alt: "tour-photo", width: 555, crop: :fill %>
+          <div class="overlay-show">
+          </div>
+        </div>
+      <% end %>
       <h2><%= @tour.title.upcase %></h2>
         <p>Details :: <%= @tour.description %></p>
         <p>Category :: <%= @tour.category.capitalize %><p>
@@ -11,7 +23,7 @@
         <p>Tour ends at:: <%= @tour.end_time %></p>
         <p>Price :: €<%= @tour.price_euro %> </p>
         <p>Date:: <%= @tour.date %></p>
-        <%= link_to "Book", confirm_path, class: "btn btn-success btn-lg"   %>
+        <%= link_to "Book", confirm_path, class: "btn btn-success btn-lg" %>
 
         <% if current_user.booked_tour?(@tour) %>
           <%= link_to "Cancel booking", cancel_book_path(@tour), class: "btn btn-danger btn-lg", method: :delete %>
