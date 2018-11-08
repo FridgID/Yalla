@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   def show
     @user = current_user
+    @booked_tours = @user.bookings.map do |b| b.tour end
+    @review_tour = @booked_tours.sample
   end
 
   def update
@@ -13,8 +15,6 @@ class UsersController < ApplicationController
       raise
     end
   end
-
-
 
   # def create
   #   @user = User.new(user_params)
@@ -35,7 +35,6 @@ class UsersController < ApplicationController
   #   end
   # end
 
-
   # def update
   #   @user = User.find(params[:id])
   #   @user.update(params[:email, :name])
@@ -54,7 +53,7 @@ class UsersController < ApplicationController
   #   end
   # end
 
-  # private
+  private
 
   def user_params
     params.require(:user).permit(:photo)

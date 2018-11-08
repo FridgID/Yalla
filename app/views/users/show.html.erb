@@ -2,27 +2,38 @@
 <!-- if no avatar render photo uploader, else display user avatar -->
 
 <% if !current_user.photo.present? %>
-  <% flash[:alert] = "Please upload a profile photo so your Yalla-friends will recognize you :)"
- %>
-<%= render partial: 'photo_uploader' %>
+  <% flash[:alert] = "Please upload a profile photo so your Yalla-friends will recognize you :)" %>
+  <%= render partial: 'photo_uploader' %>
 <% end %>
 
-<!-- <h3>Welcome <%= @user.name %>!</h3>
-<p>Username: <%= @user.email %></p> -->
-
-<h3>Yalla! Here are your upcoming tours:</h3>
+<h3>Yalla! Tours you guide:</h3>
 <ul class="list-unstyled">
   <% current_user.tours.each do |t| %>
-  <li><%= t.title %>– <%= t.location %> <i class="<%= Tour::CATEGORYS[t.category.to_sym] %> fa-1x"></i>
+    <li>
+      <%= link_to tour_path(t) do %>
+        <%= t.title %>– <%= t.location %> <i class="<%= Tour::CATEGORYS[t.category.to_sym] %> fa-1x"></i>
+      <% end %>
+    </li>
   <% end %>
-  </li>
 </ul>
-<!-- (as list or cards, if cards render from shared)
- -->
+<!-- (as list or cards, if cards render from shared) -->
 
- <h3>Psst! Did you enjoy Ghost Walk in Jordaan? We would be thrilled if you give a review!</h3>
+<h3>Yalla! Tours you booked:</h3>
+<ul class="list-unstyled">
+  <% @booked_tours.each do |t| %>
+    <li>
+      <%= link_to tour_path(t) do %>
+        <%= t.title %>– <%= t.location %> <i class="<%= Tour::CATEGORYS[t.category.to_sym] %> fa-1x"></i>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
 
-<!-- list of previous tours (as list or cards, if cards render from shared)
--->
+<h5>Psst! Did you enjoy ?
+
+<%= link_to @review_tour.title, tour_path(@review_tour) %>
+We would be thrilled if you give a review!</h3>
+
+<!-- list of previous tours (as list or cards, if cards render from shared) -->
 
 
