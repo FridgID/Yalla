@@ -1,8 +1,33 @@
 <div class="wrapper">
   <div class="container text-center">
+    <h2 class="index-logo"><%= image_tag "yalla3", alt: "logo", size: 100 %></h2>
+    <h2 class="index-header">YALLA! HURRY UP & JOIN A TOUR</h2>
+    <% if @tours.count < 3 %>
+    <% @tours.each do |tour| %>
     <div class="row">
-      <h2 class="index-logo"><%= image_tag "yalla3", alt: "logo", size: 100 %></h2>
-      <h2 class="index-header">YALLA! HURRY UP & JOIN A TOUR</h2>
+      <div class="col-md-auto">
+      <div class="smaller-grid " >
+        <%= link_to tour_path(tour), class: "custom-card-link" do %>
+        <div class="card" >
+          <h3 class="tour-title"><%= tour.title.upcase %></h3>
+        </div>
+        </div>
+        <% end %>
+      </div>
+      </div>
+    <% end %>
+    <% elsif @tours.count == 2 %>
+    <% @tours.each do |tour| %>
+      <div class="smaller-grid">
+        <%= link_to tour_path(tour), class: "custom-card-link" do %>
+        <div class="card">
+          <h3 class="tour-title"><%= tour.title.upcase %></h3>
+        </div>
+        <% end %>
+      </div>
+    <% end %>
+    <div class="row " >
+      <% else %>
       <% @tours.each do |tour| %>
         <div class="col-xs-12 col-sm-6 col-md-4">
           <%= link_to tour_path(tour), class: "custom-card-link" do %>
@@ -11,6 +36,7 @@
           </div>
           <% end %>
         </div>
+      <% end %>
       <% end %>
     </div>
   </div>
