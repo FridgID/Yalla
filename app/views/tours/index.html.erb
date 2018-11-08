@@ -4,13 +4,13 @@
       <h2 class="index-logo"><%= image_tag "yalla3", alt: "logo", size: 100 %></h2>
       <h2 class="index-header">YALLA! HURRY UP & JOIN A TOUR</h2>
       <% @tours.each do |tour| %>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <%= link_to tour_path(tour), class: "custom-card-link" do %>
-        <div class="card">
-          <h3 class="tour-title"><%= tour.title.upcase %></h3>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <%= link_to tour_path(tour), class: "custom-card-link" do %>
+          <div class="card">
+            <h3 class="tour-title"><%= tour.title.upcase %></h3>
+          </div>
+          <% end %>
         </div>
-        <% end %>
-      </div>
       <% end %>
     </div>
   </div>
