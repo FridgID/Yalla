@@ -6,8 +6,8 @@ puts "destroy users..."
 User.destroy_all
 
 puts "create users..."
-user = User.create!(email: 'test@test.com', password: 'password', password_confirmation: 'password')
-user2 = User.create!(email: 't@t.nl', password: 'password', password_confirmation: 'password')
+user = User.create!(name: "brokenbanana77", email: 'test@test.com', password: 'password', password_confirmation: 'password')
+user2 = User.create!(name: "xXSteveGamerHDXx", email: 't@t.nl', password: 'password', password_confirmation: 'password')
 
 puts "create tours..."
 Tour.create!([

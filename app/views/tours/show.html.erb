@@ -7,6 +7,13 @@
         <p>Location :: <%= @tour.location.capitalize %></p>
         <p>Price :: €<%= @tour.price_euro %> </p>
         <%= link_to "Book", confirm_path, class: "btn btn-success btn-lg"   %>
+        <ul>
+          <% @tour.reviews.each do |r| %>
+            <li>
+              [<%= r.user.name %>]<%= r.rating %> : <%= r.comment %>
+            </li>
+          <% end %>
+        </ul>
         <div
           id="map"
           style="width: 100%;
@@ -15,7 +22,7 @@
           data-markers="<%= @markers.to_json %>"
         ></div>
     </div>
- </div>
+  </div>
 </div>
 
 
