@@ -1,9 +1,8 @@
-puts "seeding..."
-
-#TODO: date/time stuff
-
-puts "destroy tours and users..."
+puts "destroy reviews.."
+Review.destroy_all
+puts "destroy tours..."
 Tour.destroy_all
+puts "destroy users..."
 User.destroy_all
 
 puts "create users..."
@@ -168,4 +167,23 @@ Tour.create!([
   }
 ])
 
+tour_ids = (Tour.first.id..Tour.last.id).to_a
+user_ids = (User.first.id..User.last.id).to_a
+puts "TOUR_IDS=#{tour_ids}"
+puts "SAMPLE_TOUR=#{tour_ids.sample}"
+puts "USER_IDS=#{user_ids}"
+puts "SAMPLE_USER=#{user_ids.sample}"
+r_count = 30
+
+puts "creating #{r_count} reviews..."
+r_count.times do
+  Review.create!([
+    {
+      rating: Random.rand(0..5),
+      comment: "lorem ipsum comment",
+      tour_id: tour_ids.sample,
+      user_id: user_ids.sample
+    }
+  ])
+end
 
