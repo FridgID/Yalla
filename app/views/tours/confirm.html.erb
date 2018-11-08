@@ -1,17 +1,14 @@
-<div class="container">
+<div class="container text-center">
   <div class="row">
-    <div class="col-md-6 col-md-offset-2">
+    <div class="col-md-8 col-md-offset-2">
 
-        <h2>Book a new tour</h2>
-        <h3><%= @tour.title %></h3>
+        <h2 class="confirm-header">To Confirm Your Tour</h2>
+        <h4>Hit confirm to book your place on <strong><%= @tour.title.upcase %></strong> tour</h4>
 
-        <p>Are you sure you want to book this tour?</p>
-        <div>
-          <%= link_to "yes", book_path(@tour), class: "btn btn-success btn-lg", method: :post %>
-        </div>
-        <div>
-          <%= link_to "back", tour_path(@tour), class: "btn btn-danger btn-lg" %>
-        </div>
+        <p class="confirm-border"><%= link_to "CONFIRM", book_path(@tour), class: "btn btn-success btn-md border-details", method: :post %></p>
+
+          <h4>If you wish to review the tour before booking please click</h4>
+          <p class="confirm-border"><%= link_to "BACK", tour_path(@tour), class: "btn btn-warning btn-md " %></p>
     </div>
   </div>
 </div>
