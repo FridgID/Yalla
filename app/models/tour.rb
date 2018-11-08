@@ -1,6 +1,8 @@
 class Tour < ApplicationRecord
   belongs_to :user
   has_many :reviews
+  mount_uploader :photo, PhotoUploader
+
 
   # CATEGORYS=["walk", "food", "beer", "boat", "bike"] # old
   CATEGORYS = {

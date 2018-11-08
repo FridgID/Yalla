@@ -45,7 +45,14 @@
             <%= f.time_field :end_time, class: "form-control"%>
           </div>
         </div>
+        <div class="photo-uploader form-group">
+          <%= f.input :photo, label: "Upload a photo:", class: "form-control" %>
+          <%= f.input :photo_cache, as: :hidden, class: "form-control" %>
+
+        </div>
       </div>
+
+
 
       <div>
         <%= f.submit class: 'btn btn-success' %>
