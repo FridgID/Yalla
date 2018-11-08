@@ -37,7 +37,7 @@ Tour.create!([
     user_id: user_ids.sample
   },
   {
-    title: "Eat sleep food repeate",
+    title: "Eat sleep food repeat",
     description: "48 1 on 1 food marathon.",
     capacity: 2,
     category: "food",
