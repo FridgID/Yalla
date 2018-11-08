@@ -1,5 +1,6 @@
 class Tour < ApplicationRecord
   belongs_to :user
+  has_many :reviews
 
   # CATEGORYS=["walk", "food", "beer", "boat", "bike"] # old
   CATEGORYS = {
