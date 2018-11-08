@@ -8,6 +8,14 @@
         <p>Price :: €<%= @tour.price_euro %> </p>
         <% if current_user.booked_tour?(@tour) %>
           <%= link_to "Cancel booking", cancel_book_path(@tour), class: "btn btn-danger btn-lg", method: :delete %>
+          <%= form_for(@review) do |f| %>
+            <%= f.label :comment %>
+            <%= f.text_field :comment %>
+            <%= f.label :rating %>
+            <%= f.number_field :rating %>
+            <%= hidden_field_tag 'tour_id', @tour.id  %>
+            <%= f.submit %>
+          <% end %>
         <% else %>
           <%= link_to "Book", confirm_path, class: "btn btn-success btn-lg" %>
         <% end %>
