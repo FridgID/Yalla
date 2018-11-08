@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   get 'tours/:id/confirm', to: 'tours#confirm', as: :confirm
   post 'tours/:id/confirm', to: 'tours#book', as: :book
   delete 'tours/:id/confirm', to: 'tours#cancel_book', as: :cancel_book
-
+  post 'reviews', to: 'reviews#create'
   resources :tours
 end
