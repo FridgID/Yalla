@@ -1,3 +1,4 @@
+
 puts "destroy reviews.."
 Review.destroy_all
 puts "destroy tours..."
@@ -6,10 +7,21 @@ puts "destroy users..."
 User.destroy_all
 
 puts "create users..."
-user = User.create!(name: "brokenbanana77", email: 'test@test.com', password: 'password', password_confirmation: 'password')
-user2 = User.create!(name: "xXSteveGamerHDXx", email: 't@t.nl', password: 'password', password_confirmation: 'password')
+User.create!(name: "brokenbanana77", email: 'test@test.com', password: 'password')
+User.create!(name: "xXSteveGamerHDXx", email: 't@t.nl', password: 'password')
+User.create!(name: "funnybunny", email: '1@2.nl', password: 'password')
+User.create!(name: "lolbob", email: '2@2.nl', password: 'password')
+
+10.times do |x|
+  User.create!(name: "#{Faker::Artist.name}#{Random.rand(0..2050)}", email: "#{x}@1.nl", password: 'password')
+end
+
+user_ids = (User.first.id..User.last.id).to_a
+puts "USER_IDS=#{user_ids}"
+puts "SAMPLE_USER=#{user_ids.sample}"
 
 puts "create tours..."
+
 Tour.create!([
   {
     title: "fancy food in ams",
@@ -20,7 +32,7 @@ Tour.create!([
     latitude: 52.376189,
     location: "amsterdam",
     price_euro: 5,
-    user_id: user.id
+    user_id: user_ids.sample
   },
   {
     title: "Eat sleep food repeate",
@@ -31,7 +43,7 @@ Tour.create!([
     latitude: 52.376129,
     location: "amsterdam",
     price_euro: 10,
-    user_id: user.id
+    user_id: user_ids.sample
   },
   {
     title: "free food for money",
@@ -42,7 +54,7 @@ Tour.create!([
     latitude: 52.376289,
     location: "amsterdam",
     price_euro: 500,
-    user_id: user.id
+    user_id: user_ids.sample
   },
   {
     title: "free beer (tap water)",
@@ -53,7 +65,7 @@ Tour.create!([
     latitude: 52.376182,
     location: "amsterdam",
     price_euro: 0,
-    user_id: user.id
+    user_id: user_ids.sample
   },
   {
     title: "friday drinks",
@@ -64,7 +76,7 @@ Tour.create!([
     latitude: 52.376189,
     location: "amsterdam",
     price_euro: 0,
-    user_id: user.id
+    user_id: user_ids.sample
   },
   {
     title: "buy beer",
@@ -75,7 +87,7 @@ Tour.create!([
     latitude: 52.376199,
     location: "amsterdam",
     price_euro: 100,
-    user_id: user.id
+    user_id: user_ids.sample
   },
   {
     title: "bike & beer",
@@ -86,7 +98,7 @@ Tour.create!([
     latitude: 52.376198,
     location: "amsterdam",
     price_euro: 20,
-    user_id: user.id
+    user_id: user_ids.sample
   },
   {
     title: "Paris foo bar",
@@ -97,7 +109,7 @@ Tour.create!([
     latitude: 48.8582,
     location: "paris",
     price_euro: 80,
-    user_id: user.id
+    user_id: user_ids.sample
   },
   {
     title: "chill boat tour",
@@ -108,7 +120,7 @@ Tour.create!([
     latitude: 4.893237,
     location: "amsterdam",
     price_euro: 20,
-    user_id: user.id
+    user_id: user_ids.sample
   },
   {
     title: "Walk and talk",
@@ -119,7 +131,7 @@ Tour.create!([
     latitude: 4.893267,
     location: "amsterdam",
     price_euro: 1,
-    user_id: user.id
+    user_id: user_ids.sample
   },
   {
     title: "Hidden places in amsterdam",
@@ -130,7 +142,7 @@ Tour.create!([
     latitude: 4.893267,
     location: "amsterdam",
     price_euro: 77,
-    user_id: user.id
+    user_id: user_ids.sample
   },
   {
     title: "You are a pirate!",
@@ -141,7 +153,7 @@ Tour.create!([
     latitude: 4.893268,
     location: "amsterdam",
     price_euro: 0,
-    user_id: user.id
+    user_id: user_ids.sample
   },
   {
     title: "Bee biking!",
@@ -152,7 +164,7 @@ Tour.create!([
     latitude: 4.893268,
     location: "amsterdam",
     price_euro: 1,
-    user_id: user.id
+    user_id: user_ids.sample
   },
   {
     title: "Jungle adventure in ams",
@@ -163,24 +175,21 @@ Tour.create!([
     latitude: 52.376182,
     location: "amsterdam",
     price_euro: 22,
-    user_id: user2.id
+    user_id: user_ids.sample
   }
 ])
 
 tour_ids = (Tour.first.id..Tour.last.id).to_a
-user_ids = (User.first.id..User.last.id).to_a
 puts "TOUR_IDS=#{tour_ids}"
 puts "SAMPLE_TOUR=#{tour_ids.sample}"
-puts "USER_IDS=#{user_ids}"
-puts "SAMPLE_USER=#{user_ids.sample}"
-r_count = 30
+r_count = tour_ids.count * 10
 
 puts "creating #{r_count} reviews..."
 r_count.times do
   Review.create!([
     {
       rating: Random.rand(0..5),
-      comment: "lorem ipsum comment",
+      comment: Faker::Hacker.say_something_smart,
       tour_id: tour_ids.sample,
       user_id: user_ids.sample
     }
