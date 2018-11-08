@@ -1,16 +1,17 @@
 <div class="container show-container">
   <div class="row">
     <div class="col-md-6 col-md-offset-2">
-      <h2><%= @tour.title.upcase %></h2>
-        <p>Details :: <%= @tour.description %></p>
-        <p>Category :: <%= @tour.category.capitalize %><p>
-        <p>Capacity :: <%= @tour.capacity %><p>
-        <p>Location :: <%= @tour.location.capitalize %></p>
-        <p>Tour starts at:: <%= @tour.start_time %></p>
-        <p>Tour ends at:: <%= @tour.end_time %></p>
-        <p>Price :: €<%= @tour.price_euro %> </p>
-        <p>Date:: <%= @tour.date %></p>
-        <%= link_to "Book", confirm_path, class: "btn btn-success btn-lg"   %>
+      <h2 class="text-center"><%= @tour.title.upcase %></h2>
+
+        <h4 class="border-details">Details</h4><p class="p-text-size"> <%= @tour.description%></p>
+        <h4 class="border-details">Category</h4><p class="p-text-size"> <%= @tour.category.capitalize %></p>
+        <h4 class="border-details">Capacity</h4><p class="p-text-size"> <%= @tour.capacity %></p>
+        <h4 class="border-details">Location</h4><p class="p-text-size"><%= @tour.location.capitalize %></p>
+        <h4 class="border-details">Tour starts at:</h4><p class="p-text-size"> <%= @tour.start_time %></p>
+        <h4 class="border-details">Tour ends at:</h4><p class="p-text-size"> <%= @tour.end_time %></p>
+        <h4 class="border-details">Price</h4><p class="p-text-size"> €<%= @tour.price_euro %> </p>
+        <h4 class="border-details">Date</h4> <p class="p-text-size"><%= @tour.date %></p>
+
 
         <% if current_user %>
           <% if current_user.booked_tour?(@tour) %>
