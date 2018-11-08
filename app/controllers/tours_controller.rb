@@ -10,6 +10,7 @@ class ToursController < ApplicationController
   end
 
   def show
+    @review = Review.new
     @tour = Tour.find(params[:id])
     @markers = [{ lat: @tour.latitude, lng: @tour.longitude }]
     authorize @tour
@@ -84,7 +85,7 @@ class ToursController < ApplicationController
   private
 
   def tour_params
-    params.require(:tour).permit(:title, :description, :capacity, :category, :longitude, :latitude, :start_time, :end_time, :date, :location, :price_euro)
+    params.require(:tour).permit(:title, :description, :capacity, :category, :longitude, :latitude, :start_time, :end_time, :date, :location, :price_euro, :photo)
   end
 end
 
