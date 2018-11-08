@@ -1,7 +1,7 @@
 <div class="profile-banner">
-  <h1>Hello <%= name %>!</h1>
+  <h1 class="profile-text-banner">Hello <%= name.capitalize %>!</h1>
   <% if current_user.photo.present? %>
-  <%= cl_image_tag @user.photo, alt: "avatar",class: "img-circle", width: 150, height: 150, crop: :thumb, gravity: :face %>
+  <%= cl_image_tag @user.photo, alt: "avatar",class: "img-circle circle-right", width: 150, height: 150, crop: :thumb, gravity: :face %>
   <% else %>
   <i class="fas fa-user fa-7x"></i>
   <% end %>
