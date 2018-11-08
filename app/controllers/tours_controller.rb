@@ -25,6 +25,32 @@ class ToursController < ApplicationController
     authorize @tour
   end
 
+  def book
+    @tour = Tour.find(params[:id])
+    booking = Booking.new
+    booking.tour = @tour
+    booking.user = current_user
+    if booking.save
+      # happy path
+      flash[:notice] = "Confirmation mail sent"
+      redirect_to tour_path(@tour)
+    else
+      # booking failed ( maybe booked already )
+      flash[:alert] = "Something went wrong! Maybe you booked the tour already."
+      redirect_to tour_path(@tour)
+    end
+
+    authorize @tour
+  end
+
+  def cancel_book
+    tour = Tour.find(params[:id])
+    current_user.cancel_booking(tour)
+    redirect_to tour_path(tour)
+
+    authorize tour
+  end
+
   def create
     @tour = Tour.new(tour_params)
     @tour.user = current_user
@@ -58,7 +84,7 @@ class ToursController < ApplicationController
   private
 
   def tour_params
-    params.require(:tour).permit(:title, :capacity, :category, :longitude, :latitude, :start_time, :end_time, :date, :location, :price_euro)
+    params.require(:tour).permit(:title, :description, :capacity, :category, :longitude, :latitude, :start_time, :end_time, :date, :location, :price_euro)
   end
 end
 

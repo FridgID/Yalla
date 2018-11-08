@@ -25,6 +25,14 @@ class TourPolicy < ApplicationPolicy
     true
   end
 
+  def book?
+    true
+  end
+
+  def cancel_book?
+    true
+  end
+
   def edit?
     record.user == user
   end
