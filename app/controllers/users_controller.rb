@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   def show
     @user = current_user
+    @booked_tours = @user.bookings.map do |b| b.tour end
+    @review_tour = @booked_tours.sample
   end
 
   def update

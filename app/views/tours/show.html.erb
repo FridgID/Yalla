@@ -6,7 +6,11 @@
         <p>Capacity :: <%= @tour.capacity %></p>
         <p>Location :: <%= @tour.location.capitalize %></p>
         <p>Price :: €<%= @tour.price_euro %> </p>
-        <%= link_to "Book", confirm_path, class: "btn btn-success btn-lg"   %>
+        <% if current_user.booked_tour?(@tour) %>
+          <%= link_to "Cancel booking", cancel_book_path(@tour), class: "btn btn-danger btn-lg", method: :delete %>
+        <% else %>
+          <%= link_to "Book", confirm_path, class: "btn btn-success btn-lg" %>
+        <% end %>
         <ul>
           <% @tour.reviews.each do |r| %>
             <li>
