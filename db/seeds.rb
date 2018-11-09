@@ -34,6 +34,7 @@ Tour.create!([
     latitude: 52.376189,
     location: "Amsterdam",
     price_euro: 5,
+    photo: "image/upload/v1541775453/p4ezriwzhth4k0klbyne.jpg",
     user_id: user_ids.sample
   },
   {
@@ -45,6 +46,7 @@ Tour.create!([
     latitude: 52.376129,
     location: "Amsterdam",
     price_euro: 10,
+    photo: 'https://foodtank.com/wp-content/uploads/2017/03/Food-Tank-Keri-Glassman-interview.jpg',
     user_id: user_ids.sample
   },
   {
@@ -89,17 +91,6 @@ Tour.create!([
     latitude: 52.376199,
     location: "Amsterdam",
     price_euro: 10,
-    user_id: user_ids.sample
-  },
-  {
-    title: "Bike To Marken",
-    description: "Join me to a long cycle to the beautiful village of Marken",
-    capacity: 10,
-    category: "bike",
-    longitude: 4.893237,
-    latitude: 52.376198,
-    location: "Amsterdam",
-    price_euro: 20,
     user_id: user_ids.sample
   },
   {
