@@ -1,26 +1,24 @@
-<% if current_user %>
-  <% if current_user.booked_tour?(tour) %>
-    <div class="cancel-border">
-      <%= link_to "Cancel Booking", cancel_book_path(tour), class: "btn btn-warning btn-md", method: :delete %>
-    </div>
+<div id="new-review-form">
+  <% if current_user %>
+    <% if current_user.booked_tour?(tour) %>
+      <div class="cancel-border">
+        <%= link_to "Cancel Booking", cancel_book_path(tour), class: "btn btn-warning btn-md", method: :delete %>
+      </div>
+      <h3 class="header-review text-center">YALLA! Please write your review.</h3>
 
-    <h3 class="header-review text-center">YALLA! PLEASE WRITE YOUR REVIEW.</h3>
+      <div class="form-label">
+        <%= simple_form_for(review, remote: true) do |f| %>
+          <%= f.label :comment %>
+          <%= f.text_field :comment, class: "text-field-box" %>
 
-    <%= simple_form_for(review) do |f| %>
-    <div class="form-label">
-      <%= f.label :comment %>
-      <%= f.text_field :comment, class: "text-field-box" %>
-
-      <%= f.label :rating %>
-      <%= select_tag :rating, options_for_select([['', -1], ['Terrible', 0], ['Poor', 1], ['Bad', 2], ['Okay', 3], ['Good', 4]], ['Very good', 5]), class: "text-field-box"  %>
-      <%= hidden_field_tag 'tour_id', tour.id  %>
-      <%= f.submit class: 'btn btn-success create-button'%>
+          <%= f.label :rating %>
+          <%= select_tag :rating, options_for_select([['', -1], ['Terrible', 0], ['Poor', 1], ['Bad', 2], ['Okay', 3], ['Good', 4]], ['Very good', 5]), class: "text-field-box"  %>
+          <%= hidden_field_tag 'tour_id', tour.id  %>
+          <%= f.submit class: 'btn btn-success create-button'%>
+        <% end %>
+      </div>
     <% end %>
-    </div>
-
   <% else %>
-    <%= link_to "Book", confirm_path, class: "btn btn-success btn-md" %>
+    <%= link_to "Sign in to book", new_user_session_path, class: "btn btn-success btn-md" %>
   <% end %>
-<% else %>
-  <%= link_to "Sign in to book", new_user_session_path, class: "btn btn-success btn-md" %>
-<% end %>
+</div>
