@@ -23,6 +23,7 @@ puts "USER_IDS=#{user_ids}"
 puts "SAMPLE_USER=#{user_ids.sample}"
 
 puts "create tours..."
+time_stamp = Time.now
 
 Tour.create!([
   {
@@ -34,6 +35,7 @@ Tour.create!([
     latitude: 52.376189,
     location: "Amsterdam",
     price_euro: 5,
+    date: time_stamp,
     user_id: user_ids.sample
   },
   {
@@ -45,6 +47,7 @@ Tour.create!([
     latitude: 52.376129,
     location: "Amsterdam",
     price_euro: 10,
+    date: time_stamp,
     user_id: user_ids.sample
   },
   {
@@ -56,6 +59,7 @@ Tour.create!([
     latitude: 52.376289,
     location: "Amsterdam",
     price_euro: 50,
+    date: time_stamp,
     user_id: user_ids.sample
   },
   {
@@ -67,6 +71,7 @@ Tour.create!([
     latitude: 52.376182,
     location: "Amsterdam",
     price_euro: 20,
+    date: time_stamp,
     user_id: user_ids.sample
   },
   {
@@ -78,6 +83,7 @@ Tour.create!([
     latitude: 52.376189,
     location: "Amsterdam",
     price_euro: 10,
+    date: time_stamp,
     user_id: user_ids.sample
   },
   {
@@ -89,6 +95,7 @@ Tour.create!([
     latitude: 52.376199,
     location: "Amsterdam",
     price_euro: 10,
+    date: time_stamp,
     user_id: user_ids.sample
   },
   {
@@ -100,6 +107,7 @@ Tour.create!([
     latitude: 52.376198,
     location: "Amsterdam",
     price_euro: 20,
+    date: time_stamp,
     user_id: user_ids.sample
   },
   {
@@ -111,6 +119,7 @@ Tour.create!([
     latitude: 48.8582,
     location: "Amsterdam",
     price_euro: 80,
+    date: time_stamp,
     user_id: user_ids.sample
   },
   {
@@ -122,6 +131,7 @@ Tour.create!([
     latitude: 4.893237,
     location: "Amsterdam",
     price_euro: 50,
+    date: time_stamp,
     user_id: user_ids.sample
   },
   {
@@ -133,6 +143,7 @@ Tour.create!([
     latitude: 4.893267,
     location: "Amsterdam",
     price_euro: 1,
+    date: time_stamp,
     user_id: user_ids.sample
   },
   {
@@ -144,6 +155,7 @@ Tour.create!([
     latitude: 4.893267,
     location: "Amsterdam",
     price_euro: 25,
+    date: time_stamp,
     user_id: user_ids.sample
   },
   {
@@ -155,6 +167,7 @@ Tour.create!([
     latitude: 4.893268,
     location: "Amsterdam",
     price_euro: 20,
+    date: time_stamp,
     user_id: user_ids.sample
   },
   {
@@ -166,6 +179,7 @@ Tour.create!([
     latitude: 4.893268,
     location: "Amsterdam",
     price_euro: 10,
+    date: time_stamp,
     user_id: user_ids.sample
   },
   {
@@ -177,6 +191,7 @@ Tour.create!([
     latitude: 52.376182,
     location: "Amsterdam",
     price_euro: 22,
+    date: time_stamp,
     user_id: user_ids.sample
   }
 ])
