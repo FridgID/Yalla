@@ -19,8 +19,7 @@
   position: relative;
   margin: 10px 0px;
   background-image: linear-gradient(rgba(0,0,0,0.7),
-   rgba(0,0,0,0.3)),
-   url('https://kitt.lewagon.com/placeholder/cities/amsterdam');
+   rgba(0,0,0,0.3)), url('https://kitt.lewagon.com/placeholder/cities/amsterdam');
   &:hover {
     background-image: linear-gradient(rgba(0,0,0,0.3),
      rgba(0,0,0,0.2)),
@@ -28,6 +27,48 @@
   }
 }
 
+.uploaded-photo {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  color: white;
+  position: relative;
+  margin: 10px 0px;
+}
+
+.uploaded-show {
+  position: relative;
+}
+
+.default-photo {
+  position: relative;
+}
+
+.overlay {
+  background-image: linear-gradient(rgba(0,0,0,0.7),
+   rgba(0,0,0,0.3));
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  &:hover {
+    background-image: linear-gradient(rgba(0,0,0,0.3),
+     rgba(0,0,0,0.2));
+  }
+}
+
+.overlay-show {
+  background-image: linear-gradient(rgba(0,0,0,0.3),
+   rgba(0,0,0,0.1));
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  &:hover {
+    background-image: linear-gradient(rgba(0,0,0,0.3),
+     rgba(0,0,0,0.2));
+  }
+}
 .card-description {
   color: white;
   position: absolute;
