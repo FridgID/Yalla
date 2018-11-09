@@ -24,6 +24,8 @@ class ToursController < ApplicationController
   def confirm
     @tour = Tour.find(params[:id])
     authorize @tour
+    flash[:notice] = "Confirmation mail sent"
+    redirect_to profile_path
   end
 
   def book
@@ -33,7 +35,8 @@ class ToursController < ApplicationController
     booking.user = current_user
     if booking.save
       # happy path
-      flash[:notice] = "Confirmation mail sent"
+      # moved to confirm
+      # flash[:notice] = "Confirmation mail sent"
       redirect_to tour_path(@tour)
     else
       # booking failed ( maybe booked already )
