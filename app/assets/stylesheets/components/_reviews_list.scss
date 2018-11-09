@@ -1,0 +1,19 @@
+ul {
+  list-style-type: none;
+}
+
+.review-border {
+  border-bottom: 1px solid $teal;
+  margin: 10px;
+  padding: 5px 0px;
+}
+
+.review-name {
+  color: $teal;
+  font-weight: bold;
+}
+
+.review-date {
+  color: rgb(150,150, 150);
+  font-weight: lighter;
+}
