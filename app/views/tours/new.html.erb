@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-6 col-md-offset-2">
+    <div class="col-md-6 col-md-offset-3">
 
-      <h2 class= "header-new text-center">Host a Tour</h2>
+      <h2 class= "header-new text-center">HOST A TOUR</h2>
       <!-- time is missing -->
       <%= simple_form_for (@tour) do |f|%>
       <div class="form-group form-label">
@@ -11,7 +11,7 @@
         <%= f.label :location %>
         <%= f.text_field :location, class: 'form-control' %>
         <%= f.label :description%>
-        <%= f.text_field :description, class: 'form-control text-field-box' %>
+        <%= f.text_area :description, class: 'form-control text-field-box' %>
 
         <div class="row">
           <div class="col-md-6">
@@ -30,19 +30,19 @@
 
           <div class="col-md-6">
             <%= f.label :date %>
-            <%= f.date_field :date, class: "form-control"%>
+            <%= f.date_field :date, class: "form-control date-color"%>
           </div>
         </div>
 
         <div class="row">
           <div class="col-md-6">
             <%= f.label :start_time %>
-            <%= f.time_field :start_time, class: "form-control" %>
+            <%= f.time_select :start_time, class: "form-control" %>
           </div>
 
           <div class="col-md-6">
             <%= f.label :end_time %>
-            <%= f.time_field :end_time, class: "form-control"%>
+            <%= f.time_select :end_time, class: "form-control"%>
           </div>
         </div>
         <div class="photo-uploader form-group">
