@@ -73,16 +73,16 @@ class ToursController < ApplicationController
 
   def update
     @tour = Tour.find(params[:id])
+    authorize @tour
     @tour.update(tour_params)
     redirect_to tours_path
-    authorize @tour
   end
 
   def destroy
     @tour = Tour.find(params[:id])
-    @tour.destroy
-    redirect_to tours_path
     authorize @tour
+    @tour.destroy
+    redirect_to profile_path
   end
 
   private

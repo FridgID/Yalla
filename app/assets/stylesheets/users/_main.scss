@@ -1,18 +1,47 @@
 .profile-banner {
-  margin: -25px;
-  height: 200px;
+  height: 100px;
   background-color: $teal;
   color: white;
   position: relative;
 }
 
-.circle-right{
+  .show-avatar {
   position: absolute;
-  top: 25px;
-  left: 50px;
+  bottom: -20px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+
 }
 
 .profile-text-banner{
   text-align: center;
-  padding-top: 20px;
+  color: $orange;
+  margin-top: 50px;
+
+}
+
+
+.p-text-size {
+  font-size: 15px;
+}
+
+
+.p-text-size a {
+  font-size: 15px;
+  color: black;
+  &:hover {
+    text-decoration: none;
+    color: $teal;
+    .when-hover {
+      color: $teal;
+    }
+
+  }
+}
+
+
+.when-hover {
+  color: white;
 }
