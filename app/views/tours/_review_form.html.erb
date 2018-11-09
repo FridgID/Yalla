@@ -17,6 +17,8 @@
           <%= f.submit class: 'btn btn-success create-button'%>
         <% end %>
       </div>
+    <% else %>
+        <%= link_to "Book", confirm_path(tour), class: "btn btn-success btn-md" %>
     <% end %>
   <% else %>
     <%= link_to "Sign in to book", new_user_session_path, class: "btn btn-success btn-md" %>
