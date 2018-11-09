@@ -19,17 +19,17 @@
 <h4 class="border-details">Category</h4>
 <p class="p-text-size"> <%= tour.category.capitalize %></p>
 
-<h4 class="border-details">Capacity</h4>
+<h4 class="border-details">Group Size</h4>
 <p class="p-text-size"> <%= tour.capacity %></p>
 
 <h4 class="border-details">Location</h4>
 <p class="p-text-size"><%= tour.location.capitalize %></p>
 
 <h4 class="border-details">Tour starts at:</h4>
-<p class="p-text-size"> <%= tour.start_time %></p>
+<p class="p-text-size"> <%= tour.start_time.strftime("%H:%M") %></p>
 
 <h4 class="border-details">Tour ends at:</h4>
-<p class="p-text-size"> <%= tour.end_time %></p>
+<p class="p-text-size"> <%= tour.end_time.strftime("%H:%M") %></p>
 
 <h4 class="border-details">Price</h4>
 <p class="p-text-size"> €<%= tour.price_euro %> </p>
