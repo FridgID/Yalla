@@ -7,20 +7,7 @@
         <div class="row">
           <div class="col-md-auto">
             <div class="smaller-grid " >
-              <%= link_to tour_path(tour), class: "custom-card-link" do %>
-                <% if tour.photo.present? %>
-                  <div class="uploaded-photo">
-                    <%= cl_image_tag tour.photo, alt: "tour-photo", width: 350, height: 175, crop: :fill %>
-                    <div class="overlay">
-                    </div>
-                    <h3 class="tour-title"><%= tour.title.upcase %></h3>
-                  </div>
-                <% else %>
-                  <div class="card" >
-                    <h3 class="tour-title"><%= tour.title.upcase %></h3>
-                  </div>
-                <% end %>
-              <% end %>
+              <%= render 'index_tour', tour: tour %>
             </div>
           </div>
         </div>
@@ -28,20 +15,7 @@
     <% else %>
       <% @tours.each do |tour| %>
         <div class="col-xs-12 col-sm-6 col-md-4">
-          <%= link_to tour_path(tour), class: "custom-card-link" do %>
-            <% if tour.photo.present? %>
-              <div class="uploaded-photo">
-                <%= cl_image_tag tour.photo, alt: "tour-photo", width: 350, height: 175, crop: :fill %>
-                <div class="overlay">
-                </div>
-                <h3 class="tour-title"><%= tour.title.upcase %></h3>
-              </div>
-            <% else %>
-              <div class="card">
-                <h3 class="tour-title"><%= tour.title.upcase %></h3>
-              </div>
-            <% end %>
-          <% end %>
+          <%= render 'index_tour', tour: tour %>
         </div>
       <% end %>
     <% end %>
