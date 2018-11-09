@@ -99,18 +99,6 @@ Tour.create!([
     user_id: user_ids.sample
   },
   {
-    title: "Bike To Marken",
-    description: "Join me to a long cycle to the beautiful village of Marken",
-    capacity: 10,
-    category: "bike",
-    longitude: 4.893237,
-    latitude: 52.376198,
-    location: "Amsterdam",
-    price_euro: 20,
-    date: time_stamp,
-    user_id: user_ids.sample
-  },
-  {
     title: "Food Trail in Jordaan",
     description: "Join me to enjoy the cuilnary delights of the Jordaan.",
     capacity: 15,
