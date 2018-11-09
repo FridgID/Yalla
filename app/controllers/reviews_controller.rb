@@ -4,6 +4,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.user = current_user
     @review.tour_id = params[:tour_id]
+    @review.rating = params[:rating]
     if @review.save
       # happy path
       redirect_to tour_path(params[:tour_id])
