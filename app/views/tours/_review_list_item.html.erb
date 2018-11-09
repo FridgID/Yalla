@@ -1,0 +1,6 @@
+<li class="review-border">
+  <p class="review-name"><%= r.user.name%><span class="review-date"> <%= r.created_at.strftime("%B, %Y") %></span></p>
+
+  <%= render 'shared/stars', stars: r.rating %>
+  <%= r.comment %>
+</li>
