@@ -36,6 +36,8 @@ Tour.create!([
     location: "Amsterdam",
     price_euro: 5,
     date: time_stamp,
+    start_time: time_stamp,
+    end_time: time_stamp + Random.rand(1..5) * 60 * 60,
     user_id: user_ids.sample
   },
   {
@@ -48,6 +50,8 @@ Tour.create!([
     location: "Amsterdam",
     price_euro: 10,
     date: time_stamp,
+    start_time: time_stamp,
+    end_time: time_stamp + Random.rand(1..5) * 60 * 60,
     user_id: user_ids.sample
   },
   {
@@ -60,6 +64,8 @@ Tour.create!([
     location: "Amsterdam",
     price_euro: 50,
     date: time_stamp,
+    start_time: time_stamp,
+    end_time: time_stamp + Random.rand(1..5) * 60 * 60,
     user_id: user_ids.sample
   },
   {
@@ -72,6 +78,8 @@ Tour.create!([
     location: "Amsterdam",
     price_euro: 20,
     date: time_stamp,
+    start_time: time_stamp,
+    end_time: time_stamp + Random.rand(1..5) * 60 * 60,
     user_id: user_ids.sample
   },
   {
@@ -84,6 +92,8 @@ Tour.create!([
     location: "Amsterdam",
     price_euro: 10,
     date: time_stamp,
+    start_time: time_stamp,
+    end_time: time_stamp + Random.rand(1..5) * 60 * 60,
     user_id: user_ids.sample
   },
   {
@@ -96,6 +106,8 @@ Tour.create!([
     location: "Amsterdam",
     price_euro: 10,
     date: time_stamp,
+    start_time: time_stamp,
+    end_time: time_stamp + Random.rand(1..5) * 60 * 60,
     user_id: user_ids.sample
   },
   {
@@ -108,6 +120,8 @@ Tour.create!([
     location: "Amsterdam",
     price_euro: 80,
     date: time_stamp,
+    start_time: time_stamp,
+    end_time: time_stamp + Random.rand(1..5) * 60 * 60,
     user_id: user_ids.sample
   },
   {
@@ -120,6 +134,8 @@ Tour.create!([
     location: "Amsterdam",
     price_euro: 50,
     date: time_stamp,
+    start_time: time_stamp,
+    end_time: time_stamp + Random.rand(1..5) * 60 * 60,
     user_id: user_ids.sample
   },
   {
@@ -132,6 +148,8 @@ Tour.create!([
     location: "Amsterdam",
     price_euro: 1,
     date: time_stamp,
+    start_time: time_stamp,
+    end_time: time_stamp + Random.rand(1..5) * 60 * 60,
     user_id: user_ids.sample
   },
   {
@@ -144,6 +162,8 @@ Tour.create!([
     location: "Amsterdam",
     price_euro: 25,
     date: time_stamp,
+    start_time: time_stamp,
+    end_time: time_stamp + Random.rand(1..5) * 60 * 60,
     user_id: user_ids.sample
   },
   {
@@ -156,6 +176,8 @@ Tour.create!([
     location: "Amsterdam",
     price_euro: 20,
     date: time_stamp,
+    start_time: time_stamp,
+    end_time: time_stamp + Random.rand(1..5) * 60 * 60,
     user_id: user_ids.sample
   },
   {
@@ -168,6 +190,8 @@ Tour.create!([
     location: "Amsterdam",
     price_euro: 10,
     date: time_stamp,
+    start_time: time_stamp,
+    end_time: time_stamp + Random.rand(1..5) * 60 * 60,
     user_id: user_ids.sample
   },
   {
@@ -180,6 +204,8 @@ Tour.create!([
     location: "Amsterdam",
     price_euro: 22,
     date: time_stamp,
+    start_time: time_stamp,
+    end_time: time_stamp + Random.rand(1..5) * 60 * 60,
     user_id: user_ids.sample
   }
 ])
