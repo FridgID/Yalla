@@ -1,8 +1,8 @@
-      <ul>
-        <% tour.reviews.each do |r| %>
-          <li>
-            [<%= r.created_at.strftime("%b %d, %Y") %>]<%= r.user.name %>: <%= r.comment %>
-            <%= render 'shared/stars', stars: r.rating %>
-          </li>
-        <% end %>
-      </ul>
+<ul>
+  <% tour.reviews.each do |r| %>
+    <li>
+      [<%= r.created_at.strftime("%b %d, %Y") %>]<%= r.user.name %>: <%= r.comment %>
+      <%= render 'shared/stars', stars: r.rating %>
+    </li>
+  <% end %>
+</ul>
