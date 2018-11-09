@@ -45,3 +45,11 @@
 .when-hover {
   color: white;
 }
+
+.profile-link a {
+  color: $teal;
+}
+
+.profile-link a:hover {
+  color: $orange;
+}
