@@ -10,6 +10,7 @@ class ToursController < ApplicationController
   end
 
   def show
+    @review = Review.new
     @tour = Tour.find(params[:id])
     @markers = [{ lat: @tour.latitude, lng: @tour.longitude }]
     authorize @tour
