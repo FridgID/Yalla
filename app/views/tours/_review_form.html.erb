@@ -1,0 +1,22 @@
+      <% if current_user %>
+        <% if current_user.booked_tour?(tour) %>
+          <div>
+            <%= link_to "Cancel Booking", cancel_book_path(tour), class: "btn btn-success btn-md", method: :delete %>
+          </div>
+
+          <div>
+            <%= form_for(review) do |f| %>
+              <%= f.label :comment %>
+              <%= f.text_field :comment %>
+              <%= f.label :rating %>
+              <%= f.number_field :rating %>
+              <%= hidden_field_tag 'tour_id', tour.id  %>
+              <%= f.submit %>
+            <% end %>
+            <% else %>
+              <%= link_to "Book", confirm_path, class: "btn btn-success btn-md" %>
+            <% end %>
+              <% else %>
+              <%= link_to "Sign in to book", new_user_session_path, class: "btn btn-success btn-md" %>
+            <% end %>
+          </div>

@@ -1,0 +1,40 @@
+      <% if tour.photo.present? %>
+        <div class="uploaded-show">
+          <%= cl_image_tag tour.photo, alt: "tour-photo", width: 555, crop: :fill  %>
+          <div class="overlay-show">
+          </div>
+        </div>
+      <% else %>
+        <div class="default-photo">
+          <%= image_tag "https://kitt.lewagon.com/placeholder/cities/amsterdam", alt: "tour-photo", width: 555, crop: :fill %>
+          <div class="overlay-show">
+          </div>
+        </div>
+      <% end %>
+
+      <h2 class="show-header text-center"><%= tour.title.upcase %></h2>
+
+
+      <h4 class="border-details">Details</h4>
+      <p class="p-text-size"> <%= tour.description%></p>
+
+      <h4 class="border-details">Category</h4>
+      <p class="p-text-size"> <%= tour.category.capitalize %></p>
+
+      <h4 class="border-details">Capacity</h4>
+      <p class="p-text-size"> <%= tour.capacity %></p>
+
+      <h4 class="border-details">Location</h4>
+      <p class="p-text-size"><%= tour.location.capitalize %></p>
+
+      <h4 class="border-details">Tour starts at:</h4>
+      <p class="p-text-size"> <%= tour.start_time %></p>
+
+      <h4 class="border-details">Tour ends at:</h4>
+      <p class="p-text-size"> <%= tour.end_time %></p>
+
+      <h4 class="border-details">Price</h4>
+      <p class="p-text-size"> €<%= tour.price_euro %> </p>
+
+      <h4 class="border-details">Date</h4>
+      <p class="p-text-size"><%= tour.date %></p>

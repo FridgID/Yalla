@@ -1,86 +1,17 @@
-<div class="container show-container">
-  <div class="row">
-    <div class="col-md-6 col-md-offset-2">
-
-      <% if @tour.photo.present? %>
-        <div class="uploaded-show">
-          <%= cl_image_tag @tour.photo, alt: "tour-photo", width: 555, crop: :fill  %>
-          <div class="overlay-show">
-          </div>
-        </div>
-      <% else %>
-        <div class="default-photo">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/cities/amsterdam", alt: "tour-photo", width: 555, crop: :fill %>
-          <div class="overlay-show">
-          </div>
-        </div>
-      <% end %>
-
-      <h2 class="show-header text-center"><%= @tour.title.upcase %></h2>
-
-
-      <h4 class="border-details">Details</h4>
-      <p class="p-text-size"> <%= @tour.description%></p>
-
-      <h4 class="border-details">Category</h4>
-      <p class="p-text-size"> <%= @tour.category.capitalize %></p>
-
-      <h4 class="border-details">Capacity</h4>
-      <p class="p-text-size"> <%= @tour.capacity %></p>
-
-      <h4 class="border-details">Location</h4>
-      <p class="p-text-size"><%= @tour.location.capitalize %></p>
-
-      <h4 class="border-details">Tour starts at:</h4>
-      <p class="p-text-size"> <%= @tour.start_time %></p>
-
-      <h4 class="border-details">Tour ends at:</h4>
-      <p class="p-text-size"> <%= @tour.end_time %></p>
-
-      <h4 class="border-details">Price</h4>
-      <p class="p-text-size"> €<%= @tour.price_euro %> </p>
-
-      <h4 class="border-details">Date</h4>
-      <p class="p-text-size"><%= @tour.date %></p>
-
-      <div>
-        <% if current_user %>
-        <% if current_user.booked_tour?(@tour) %>
-        <%= link_to "Cancel Booking", cancel_book_path(@tour), class: "btn btn-success btn-md", method: :delete %>
-      </div>
-
-      <div>
-        <%= form_for(@review) do |f| %>
-          <%= f.label :comment %>
-          <%= f.text_field :comment %>
-          <%= f.label :rating %>
-          <%= f.number_field :rating %>
-          <%= hidden_field_tag 'tour_id', @tour.id  %>
-          <%= f.submit %>
-        <% end %>
-          <% else %>
-          <%= link_to "Book", confirm_path, class: "btn btn-success btn-md" %>
-        <% end %>
-        <% else %>
-        <%= link_to "Sign in to book", new_user_session_path, class: "btn btn-success btn-md" %>
-        <% end %>
-      </div>
-
-        <ul>
-          <% @tour.reviews.each do |r| %>
-          <li>
-            [<%= r.created_at.strftime("%b %d, %Y") %>]<%= r.user.name %>: <%= r.comment %>
-            <%= render 'shared/stars', stars: r.rating %>
-          </li>
-          <% end %>
-        </ul>
-      </div>
+<div class="container ">
+  <div class="show-container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-2">
+        <%= render 'tour_description', tour: @tour %>
+        <%= render 'review_form', review: @review, tour: @tour %>
+        <%= render 'reviews_list', tour: @tour %>
+      </div> <!-- col -->
       <div
       id="map"
       data-markers="<%= @markers.to_json %>"
       ></div>
-    </div>
-  </div>
-</div>
+    </div> <!-- bootstrap row -->
+  </div> <!-- show container -->
+</div> <!-- bootstrap container -->
 
 
